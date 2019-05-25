@@ -1,0 +1,80 @@
+#include <iostream>
+#include <conio.h>
+
+using namespace std;
+
+void menu()
+{
+	int mode, var1, var2;
+	double result;
+	char exit_flag = 'y', decision;
+	
+	cout << "MENU:" << endl;
+	
+	cout << "\n";
+	cout << "1. Addition" << endl;
+	cout << "2. Subtraction" << endl;
+	cout << "3. Multiplication" << endl;
+	cout << "4. Division" << endl;
+	cout << "5. Modulus"<<endl;
+    cout << "\n";
+    
+	do
+	{
+	    cout << "\n";
+		cout << "Enter the mode of your choice: "; 
+        cin >> mode;
+        cout << "\n";
+        
+        cout << "\n";
+		cout << "Enter the two variables: "; 
+		cin >> var1 >> var2;
+		cout << "\n";
+		
+		switch(mode)
+		{
+			case 1: 
+				result = var1 + var2;
+				break;
+				
+			case 2: 
+				result = var1 - var2;
+				break;
+				
+			case 3: 
+				result = var1 * var2;
+				break;
+				
+			case 4: 
+				result = var1 / var2;
+				break;
+				
+			case 5: 
+				result = var1 % var2;
+				break;
+				
+			cout << "\n";	
+			default: cout << "The value you have entered is Invalid";
+			cout << "\n";
+		}
+		cout << "\n";
+		cout<<"Result: " << result << endl;
+		cout<<"Will you continue?(y/n)";
+		cin>> exit_flag;
+		cout << "\n";
+		
+		if (exit_flag != 'y' || exit_flag != 'Y')
+		{
+			break;
+		}
+	}
+	while (decision != 'Y');
+}
+
+int main ()
+{ 
+    menu();
+    
+_getch ();
+return 0;
+}
